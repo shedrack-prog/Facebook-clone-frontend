@@ -14,8 +14,6 @@ const initialState = {
   password: '',
 };
 export default function LoginForm({ setVisible }) {
-  const url = 'http://localhost:8000/api/v1';
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -25,10 +23,13 @@ export default function LoginForm({ setVisible }) {
   const loginHandler = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.post(`${url}/auth/login`, {
-        email,
-        password,
-      });
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/login`,
+        {
+          email,
+          password,
+        }
+      );
       setLoading(false);
       const { message, ...rest } = data;
       setSuccess(message);

@@ -17,7 +17,7 @@ export default function SendEmail({
     setLoading(true);
     try {
       const { data } = await axios.post(
-        'http://localhost:8000/api/v1/auth/sendResetCode',
+        `${process.env.REACT_APP_BACKEND_URL}/auth/sendResetCode`,
 
         { email }
       );

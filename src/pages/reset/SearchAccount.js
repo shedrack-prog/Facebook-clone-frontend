@@ -28,7 +28,7 @@ export default function SearchAccount({
     setLoading(true);
     try {
       const { data } = await axios.post(
-        `http://localhost:8000/api/v1/auth/findUser`,
+        `${process.env.REACT_APP_BACKEND_URL}/auth/findUser`,
         { email }
       );
       setError('');

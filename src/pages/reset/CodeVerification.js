@@ -24,7 +24,7 @@ export default function CodeVerification({
     setLoading(true);
     try {
       const { data } = await axios.post(
-        'http://localhost:8000/api/v1/auth/validateResetCode',
+        `${process.env.REACT_APP_BACKEND_URL}/auth/validateResetCode`,
         {
           email,
           code,

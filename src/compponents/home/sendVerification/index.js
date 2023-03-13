@@ -8,7 +8,7 @@ export default function SendVerification({ user }) {
   const sendVerificationLink = async () => {
     try {
       const { data } = await axios.post(
-        `http://localhost:8000/api/v1/auth/resendVerification`,
+        `${process.env.REACT_APP_BACKEND_URL}/auth/resendVerification`,
         {},
         {
           headers: {

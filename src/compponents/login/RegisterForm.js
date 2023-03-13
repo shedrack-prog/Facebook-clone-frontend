@@ -73,20 +73,23 @@ export default function RegisterForm({ setVisible }) {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState();
   const [loading, setLoading] = useState(false);
-  const url = 'http://localhost:8000/api/v1';
+
   const registerSubmit = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.post(`${url}/auth/register`, {
-        first_name,
-        last_name,
-        email,
-        password,
-        bYear,
-        bMonth,
-        bDay,
-        gender,
-      });
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/register`,
+        {
+          first_name,
+          last_name,
+          email,
+          password,
+          bYear,
+          bMonth,
+          bDay,
+          gender,
+        }
+      );
       setLoading(false);
       setError('');
       const { message, ...rest } = data;
