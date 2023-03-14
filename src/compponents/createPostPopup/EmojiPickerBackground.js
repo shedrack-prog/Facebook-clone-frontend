@@ -28,15 +28,15 @@ export default function EmojiPickerBackgrounds({
     setCursorPosition(start.length + emoji.length);
   };
   const postBackgrounds = [
-    '../../../images/postbackgrounds/1.jpg',
-    '../../../images/postbackgrounds/2.jpg',
-    '../../../images/postbackgrounds/3.jpg',
-    '../../../images/postbackgrounds/4.jpg',
-    '../../../images/postbackgrounds/5.jpg',
-    '../../../images/postbackgrounds/6.jpg',
-    '../../../images/postbackgrounds/7.jpg',
-    '../../../images/postbackgrounds/8.jpg',
-    '../../../images/postbackgrounds/9.jpg',
+    '../../../images/1.jpg',
+    '../../../images/2.jpg',
+    '../../../images/3.jpg',
+    '../../../images/4.jpg',
+    '../../../images/5.jpg',
+    '../../../images/6.jpg',
+    '../../../images/7.jpg',
+    '../../../images/8.jpg',
+    '../../../images/9.jpg',
   ];
   const backgroundHanlder = (i) => {
     bgRef.current.style.backgroundImage = `url(${postBackgrounds[i]})`;
